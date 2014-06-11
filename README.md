@@ -32,11 +32,35 @@ apn.send({
 
 ```
   {string|string[]} token Device token
-  {number} expiry Timestamp for date expiration
-  {number} badge Badge count
-  {string} sound Sound
-  {string} alert Text alert
-  {object} payload Custom payload
+  ...
+```
+
+Additional fields can be found in [node-apn documentation](https://github.com/argon/node-apn/blob/master/doc/apn.markdown#class-apnnotification).
+
+#### Events
+
+##### transmitted
+
+Emmited when a notification was correctly transmitted to Apple servers. You can find more details in [node-apn documentation](https://github.com/argon/node-apn/blob/master/doc/apn.markdown#event-transmitted).
+
+```js
+apn.on('transmitted', function (notification, device) {});
+```
+
+#### transmissionError
+
+Emmited when a error occurs during notfication transmission. You can find more details in [node-apn documentation](https://github.com/argon/node-apn/blob/master/doc/apn.markdown#event-transmissionerror).
+
+```js
+apn.on('transmissionError', function (errorCode, notification, device) {});
+```
+
+#### error
+
+Called when an error occurs during the connection to Apple servers. You can find more details in [node-apn documentation](https://github.com/argon/node-apn/blob/master/doc/apn.markdown#event-error).
+
+```js
+apn.on('error', function (error) {});
 ```
 
 ### Google Cloud Messaging (GCM)
@@ -127,9 +151,23 @@ mpns.send({
   {string} param Optional uri parameters
 ```
 
-## Multi notification support
+#### Events
 
-You can send a notification to several devices, each identifier supports a simple string or an array of string.
+#### transmitted
+
+Emmited when a notification was correctly transmitted to Microsoft servers.
+
+```js
+mpns.on('transmitted', function (result, pushUri) {});
+```
+
+#### transmissionError
+
+Emmited when a error occurs during the transmission of the message.
+
+```js
+mpns.on('transmissionError', function (error, pushUri) {});
+```
 
 ## Events
 

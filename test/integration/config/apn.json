@@ -1,0 +1,9 @@
+{
+  "apn": {
+    "connectionTimeout": 1000,
+    "key": "./test/config/apn/key.pem",
+    "cert": "./test/config/apn/cert.pem"
+  },
+  "validTokens": ["906b81a1b8a62aaad6c91f2225ecc1de2c103141d20f9067f708add5f3c6a5ba"],
+  "invalidTokens": ["906b81a1b8a62aaad6c91f2225ecc1de2c103141d20f9067f708add5f3c6a5bb"]
+}

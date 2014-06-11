@@ -1,0 +1,8 @@
+{
+  "c2dm": {
+    "user": "devmia@gmail.com",
+    "password": "cd26lscd26ls",
+    "source": "lemonde.fr"
+  },
+  "invalidRegistrationIds": ["xxx"]
+}
